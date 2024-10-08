@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour
     {
         // bool isVoteKeyPressed = Input.GetKeyDown(voteKey);
 
+        Rigidbody objRigidBody = GetComponent<Rigidbody>();
+
         Vector3 movementDirection = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
@@ -37,5 +39,11 @@ public class Movement : MonoBehaviour
             movementDirection += transform.right;
         }
         transform.position += movementDirection.normalized * moveSpeed * Time.deltaTime;
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            objRigidBody.AddForce(new Vector3(0f, 5f, 0f), ForceMode.Impulse);
+        }
     }
 }

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Trigger1 : MonoBehaviour
+public class Trigger2 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,6 +18,16 @@ public class Trigger1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("hi");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        transform.Rotate(0f, 1.0f, 0f, Space.Self);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<MeshRenderer>().material.color = new Color(0f, 1.0f, 0f);
     }
 }

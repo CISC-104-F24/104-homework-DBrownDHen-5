@@ -40,4 +40,11 @@ public class PlayerCollision : MonoBehaviour
         Debug.Log("No longer colliding with something");
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Color Changer"))
+        {
+            GetComponent<MeshRenderer>().material.color = other.gameObject.GetComponent<MeshRenderer>().material.color;
+        }
+    }
 }

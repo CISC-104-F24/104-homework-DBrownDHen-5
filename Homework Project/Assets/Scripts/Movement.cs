@@ -62,19 +62,19 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            movementDirection += transform.forward;
+            movementDirection += new Vector3(0f, 0f, 1f);//transform.forward;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            movementDirection += (transform.right * -1);
+            movementDirection += new Vector3(-1f, 0f, 0f);//(transform.right * -1);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            movementDirection += (transform.forward * -1);
+            movementDirection += new Vector3(0f, 0f, -1f);//(transform.forward * -1);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            movementDirection += transform.right;
+            movementDirection += new Vector3(1f, 0f, 0f);//transform.right;
         }
         transform.position += movementDirection.normalized * moveSpeed * Time.deltaTime;
 

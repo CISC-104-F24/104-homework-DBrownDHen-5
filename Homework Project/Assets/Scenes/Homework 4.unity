@@ -586,6 +586,10 @@ MonoBehaviour:
   bottomNum: {fileID: 1717782751}
   background: {fileID: 1279532166}
   suitIcon: {fileID: 1863821634}
+  heart: {fileID: 21300000, guid: fad333f6acdfdba408a46a0f3b520d93, type: 3}
+  diamond: {fileID: 21300000, guid: 3b8c41167841b7a4e84ea5eeb4110e0c, type: 3}
+  club: {fileID: 21300000, guid: cee40c1d6162830438d8ffc1056fe635, type: 3}
+  spade: {fileID: 21300000, guid: a9eb45d4214e64f41a168a94cc3a8ff8, type: 3}
 --- !u!1 &508111741
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +943,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 487542738}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: changeNumber
+        m_MethodName: ChangeNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1415,7 +1419,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 487542738}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: resetBackground
+        m_MethodName: ResetBackground
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2097,7 +2101,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1683567806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 487542738}
+        m_TargetAssemblyTypeName: Card, Assembly-CSharp
+        m_MethodName: ChangeSuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1683567806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2355,7 +2371,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 487542738}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: changeNumber
+        m_MethodName: ChangeNumber
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2563,7 +2579,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 487542738}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: randomizeBackground
+        m_MethodName: RandomizeBackground
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

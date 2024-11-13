@@ -16,6 +16,11 @@ public class Card : MonoBehaviour
     public Image background;
     public Image suitIcon;
 
+    public Sprite heart;
+    public Sprite diamond;
+    public Sprite club;
+    public Sprite spade;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +31,33 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ChangeNumber(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ChangeNumber(-1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChangeSuit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RandomizeBackground();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetBackground();
+        }
     }
 
-    public void changeNumber(int number)
+    public void ChangeNumber(int number)
     {
         if (number < 0)
         {
@@ -49,7 +77,7 @@ public class Card : MonoBehaviour
         bottomNum.text = num.ToString();
     }
 
-    public void randomizeBackground()
+    public void RandomizeBackground()
     {
         float randomRed = Random.Range(0.0f, 1.0f);
         float randomGreen = Random.Range(0.0f, 1.0f);
@@ -58,12 +86,13 @@ public class Card : MonoBehaviour
         background.color = currentColor;
     }
 
-    public void resetBackground()
+    public void ResetBackground()
     {
         background.color = bgColor;
+        currentColor = bgColor;
     }
 
-    public void changeSuit()
+    public void ChangeSuit()
     {
         if (suit != 4)
         {
@@ -75,22 +104,21 @@ public class Card : MonoBehaviour
         }
 
         // The card's suit will be changed depending on the value stored in "suit" (1, 2, 3, or 4)
-
         if (suit == 1)
         {
-            suitIcon.sprite = idk?;
+            suitIcon.sprite = heart;
         }
         else if (suit == 2)
         {
-
+            suitIcon.sprite = diamond;
         }
         else if (suit == 3)
         {
-
+            suitIcon.sprite = club;
         }
         else if (suit == 4)
         {
-
+            suitIcon.sprite = spade;
         }
     }
 }
